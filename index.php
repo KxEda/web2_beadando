@@ -15,7 +15,13 @@ if (isset($_SESSION['errors'])) {
 
 ?>
 
-Home page
+Today is:
+<?php
+require("./soap/soapKliens.php");
+?>
+
+<div id="latest-news" class='card-deck'>
+</div>
 
 
 
@@ -26,42 +32,28 @@ Home page
         this.content = param.content;
         this.created_at = param.created_at;
 
-        this.printTo = function($elem) {
+        this.addTo = function($elem) {
             var $card = $('<div>').addClass('card').css("width", "18rem");
             var $cardBody = $('<div>').addClass('card-body');
-            var $h5 = $('h5').addClass('card-title');
-            var $p = $('p').addClass('card-text');
+            var $h5 = $('<h5>').addClass('card-title');
+            var $p = $('<p>').addClass('card-text');
 
-            $h5.text(this.title + " - at " + this.created_a);
+            // $h5.text(this.title + " - at " + this.created_a);
+            $h5.text("hii");
             $p.text(this.content);
 
             $card.append($cardBody);
             $cardBody.append($h5, $p);
 
             $elem.append($card);
-
-            //     var text =           
-            // "<div class='card' style='width: 18rem;'>" +            
-            //     "<div class='card-body'>" +
-            //         "<h5 class='card-title'>"+ this.title +" - at "+this.created_at+"</h5>" +
-            //         "<p class='card-text'>"+this.content+"</p>"+   
-            //     "</div>" + 
-            // "</div>";       
-
-
-
-
-
-
-
-
-
         }
     }
 
     function addNews(newsArray) {
+        var $list = $("#latest-news");
         for (var i = 0; i < newsArray.length; i++) {
-            console.log(newsArray[i]);
+            var news = new News(newsArray[i]);
+            news.addTo($list);
         }
     }
 

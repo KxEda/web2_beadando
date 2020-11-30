@@ -22,13 +22,13 @@ $userId = $_SESSION['user']['id'];
 $createdAt = date("Y-m-d");
 
 // Megcsinálni hogy ne mindig ehhez a hírhez adja hozzá a kommentet.
-$newsId = 1;
+$newsId = $_POST["news_id"];
 
 $sql = "INSERT INTO comment(content, created_at, user_id, news_id) VALUES ('$content', '$createdAt', '$userId', '$newsId')";
 
 if ($conn->query($sql) === TRUE) {
     $conn->close();
-    header('Location: ../');
+    header('Location: ../news.php');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

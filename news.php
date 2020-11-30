@@ -15,7 +15,7 @@ function createCard($news)
             <h5 class='card-title'>$news->title - by $news->user_id at $news->created_at</h5>
             <p class='card-text'>$news->content</p>";
     $end =
-        "<a href='#' class='btn btn-primary'>Comment</a>
+        "<a href='./add_comment.php?news_id=$news->id' class='btn btn-primary'>Comment</a>
         </div>
      </div>";
 
