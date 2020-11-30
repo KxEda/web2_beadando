@@ -21,7 +21,7 @@ $content = $_POST['content'];
 $userId = $_SESSION['user']['id'];
 $createdAt = date("Y-m-d");
 
-// Megcsinálni hogy ne mindig ehhez a hírhez adja hozzá a kommentet.
+// Komment.
 $newsId = $_POST["news_id"];
 
 $sql = "INSERT INTO comment(content, created_at, user_id, news_id) VALUES ('$content', '$createdAt', '$userId', '$newsId')";

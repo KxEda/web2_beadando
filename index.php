@@ -1,8 +1,6 @@
 <?php
 
 
-
-
 require("./reusable/header.php");
 require("./reusable/menu.php");
 
@@ -38,8 +36,7 @@ require("./soap/soapKliens.php");
             var $h5 = $('<h5>').addClass('card-title');
             var $p = $('<p>').addClass('card-text');
 
-            // $h5.text(this.title + " - at " + this.created_a);
-            $h5.text("hii");
+            $h5.text(this.title);
             $p.text(this.content);
 
             $card.append($cardBody);

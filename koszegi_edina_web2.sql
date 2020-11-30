@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2020. Nov 29. 20:34
+-- Létrehozás ideje: 2020. Nov 30. 20:41
 -- Kiszolgáló verziója: 10.4.16-MariaDB
 -- PHP verzió: 7.4.12
 
@@ -40,8 +40,9 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`id`, `news_id`, `user_id`, `created_at`, `content`) VALUES
-(1, 2, 17, '2020-11-27', 'sdafgasd 122134 ewrfew'),
-(2, 2, 17, '2020-11-25', '11111111');
+(1, 2, 17, '2020-11-27', 'Szuper! Máris nézem a kínálatot!'),
+(2, 2, 17, '2020-11-25', 'Sziasztok!\r\n\r\nA 4-es számú női kesztyű várható fehér-fekete színkombinációban is?'),
+(5, 10, 28, '2020-11-30', 'Szuper!');
 
 -- --------------------------------------------------------
 
@@ -87,11 +88,13 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `content`, `created_at`, `user_id`) VALUES
-(2, 'péksüti', 'gluténmentes zabfalat', '2020-11-18', 2),
-(10, 'asdsad', 'asdsadafff', '0000-00-00', 2),
-(11, 'wohoo', 'new news', '0000-00-00', 17),
-(15, 'asdsad', 'sdgfasg', '2020-11-27', 17),
-(20, 'sdf', 'adfa', '2020-11-28', 24);
+(2, 'Első hír', 'Megérkeztek a téli bélelt, bőr motoros kesztyűk! \r\nAz első héten 20% kedvezmény!', '2020-11-18', 2),
+(10, 'Második hír', 'BlackFriday!\r\n\r\nJövőhét pénteken minden női és férfi kezeslábas bőrruha 50%!', '0000-00-00', 2),
+(11, 'Harmadik hír', 'Motoros túra!\r\n\r\nKedves motoros barátaim!\r\nAz alábbi linken megtekinthető a legutóbbi Balaton kerülő túrám:\r\nwww.valamivideonezoportal.hu/motorosbalatonostura', '0000-00-00', 17),
+(15, 'Negyedik hír', 'Új áru!', '2020-11-27', 17),
+(20, 'Ötödik hír', 'Weboldal karbantartás!\r\n\r\nKedves Látogatóink!\r\n\r\nA 2020.12.01 16:00 és 18:00 közötti időszakban a weboldal karbantartás miatt nem elérhető.\r\n\r\nSzíves megértésüket köszönjük!', '2020-11-28', 24),
+(24, 'Hatodik hír', 'Használt motor eladó!\r\n\r\nKawasaki ER-5 2001-es évjárat, 2021.05.hó műszakival, kihasználatlanság miatt eladó.\r\n\r\nÉrdeklődni: +3699/12345678 telefonszámon.\r\n', '2020-11-29', 27),
+(25, 'Teszt hír', 'A három utolsó hír megjelenítésének tesztelése (1).', '2020-11-30', 28);
 
 -- --------------------------------------------------------
 
@@ -139,7 +142,11 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`, `role_id`) VALUES
 (21, 'bob', 'bob@bob.com', 'bobpw', 2),
 (22, 'ww', 'w@w.com', 'abMGh52G2uDdQ', 2),
 (23, 'qwe', 'qwe@wqe.com', 'ab6p5vl3jJVGg', 2),
-(24, 'sfsf', 'sfsf@a.com', 'abFZSxKKdq5s6', 2);
+(24, 'sfsf', 'sfsf@a.com', 'abFZSxKKdq5s6', 2),
+(25, 'AA', 'a@ab.com', 'abxxB7HlIeckU', 2),
+(26, 'AA', 'proba@proba', 'abCzJCqKqyTm2', 2),
+(27, 'proba', 'proba@proba', 'abg0p.MdZgRXs', 2),
+(28, 'Test', 'test@test.com', 'abgOeLfPimXQo', 2);
 
 --
 -- Indexek a kiírt táblákhoz
@@ -188,7 +195,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT a táblához `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT a táblához `menuitem`
@@ -200,7 +207,7 @@ ALTER TABLE `menuitem`
 -- AUTO_INCREMENT a táblához `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT a táblához `role`
@@ -212,7 +219,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT a táblához `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Megkötések a kiírt táblákhoz

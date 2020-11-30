@@ -26,7 +26,7 @@ function createCard($news)
         foreach ($news->comments as $comment) {
             $comments = $comments .  "<li class='list-group-item'>
                 $comment->content <br> 
-                by $comment->user_id <br>
+                by $comment->user_id 
                 at $comment->created_at
             </li>";
         }
